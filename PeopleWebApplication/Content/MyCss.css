@@ -1,0 +1,47 @@
+﻿*{
+    box-sizing:border-box;
+}
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color:paleturquoise;
+}
+#lblTitle {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:30px;
+    font-weight:100;
+
+}
+#mainContainer{
+    margin-top: 30px;
+    padding-top:5px;
+    background-color: white;
+    box-shadow: 0 0 2px black;
+ }
+#title{
+    height:28px;
+}
+nav{
+    text-align:center;
+    margin:20px auto;
+}
+ul{
+    padding-left:0;
+}
+nav ul li {
+    display: inline-block;
+    width: 150px;
+    margin: 5px 20px;
+}
+
+footer {
+    text-align:center;
+    margin-top:20px;
+}
+
+.glyphicon glyphicon-save{
+    background-color:black;
+}
+
+.col-lg-4-ctrl{
+    width:350px;
+}

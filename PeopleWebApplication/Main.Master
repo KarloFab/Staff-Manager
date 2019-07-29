@@ -1,0 +1,80 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="PeopleWebApplication.Main" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+	<title runat="server" id="htmlTitle">People Web application</title>
+
+	<script src="Scripts/jquery-3.0.0.js"></script>
+	<script src="Scripts/jquery-ui-1.12.1.js"></script>
+	<script src="Scripts/MyJS.js"></script>
+	<script src="Scripts/bootstrap.js"></script>
+	<script src="Scripts/toastr.js"></script>
+	<link href="Content/bootstrap.css" rel="stylesheet" />
+	<link href="Content/MyCss.css" rel="stylesheet" />
+	<link href="Content/toastr.css" rel="stylesheet" />
+	<link href="Content/themes/base/jquery-ui.css" rel="stylesheet" />
+
+	<asp:ContentPlaceHolder ID="head" runat="server">
+	</asp:ContentPlaceHolder>
+
+</head>
+<body>
+	<form id="form1" runat="server">
+		<div class="container" id="mainContainer">
+			<header>
+				<div class="row">
+					<div id="title" class="col-sm-6 text-left">
+						<asp:Label ID="lblTitle" runat="server" Text="Prijava" meta:resourcekey="lblTitleResource1"></asp:Label>
+					</div>
+					<div class="col-sm-6 text-left">
+						<asp:Button ID="btnLogOut" runat="server" Text="Odjavi se" CssClass="btn btn-sm btn-warning pull-right" Style="margin-top: 10px; margin-left: 5px;" OnClick="btnLogOut_Click" UseSubmitBehavior="false" meta:resourcekey="btnLogOutResource1" />
+						<asp:Button ID="btnAdminAdmin" runat="server" Text="ADMIN ADMIN" CssClass="btn btn-sm btn-success pull-right" Style="margin-top: 10px;" UseSubmitBehavior="false" meta:resourcekey="btnAdminAdminResource1" />
+					</div>
+				</div>
+				<hr style="margin-top: 7px;" />
+				<nav>
+					<ul>
+						<li>
+							<asp:LinkButton ID="lbAddPerson"
+								runat="server"
+								CssClass="btn btn-default btn-md"
+								Width="160px" OnClick="lbAddPerson_Click" meta:resourcekey="lbAddPersonResource1">
+                                 <i class="glyphicon glyphicon-floppy-save"></i> Dodaj osobu</asp:LinkButton>
+						</li>
+						<li>
+							<asp:LinkButton ID="lbUpdatePeople" OnClick="lbUpdatePeople_Click" runat="server" CssClass="btn btn-default  btn-md" Width="160px" meta:resourcekey="lbUpdatePeopleResource1">
+                                 <i class="glyphicon glyphicon-share"></i> Ažuriraj osobe</asp:LinkButton>
+						</li>
+						<li>
+							<asp:LinkButton ID="lbShowPeople" runat="server" OnClick="lbShowPeople_Click" CssClass="btn btn-default  btn-md" Width="160px" meta:resourcekey="lbShowPeopleResource1">
+                                 <i class="glyphicon glyphicon-th-list"></i> Prikaži osobe</asp:LinkButton>
+						</li>
+						<li>
+							<asp:LinkButton ID="lbSetup" OnClick="lbSetup_Click" runat="server" CssClass="btn btn-default btn-md" Width="160px" meta:resourcekey="lbSetupResource1">
+                             <i class="glyphicon glyphicon-cog"></i> Postavke</asp:LinkButton>
+						</li>
+					</ul>
+				</nav>
+				<hr />
+			</header>
+			<section>
+				<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+				</asp:ContentPlaceHolder>
+			</section>
+
+			<footer>
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center" id="footer" runat="server">
+					<hr />
+					<p><%: DateTime.Now.ToLongDateString() %> | RWA - <span style="color: red;">WebForms</span> - Project</p>
+					<asp:Label ID="lblRepo" runat="server" CssClass="badge" meta:resourcekey="lblRepoResource1"></asp:Label>
+					<br />
+					<br />
+				</div>
+				<br />
+			</footer>
+		</div>
+	</form>
+</body>
+</html>
